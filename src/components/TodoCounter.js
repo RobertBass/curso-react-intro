@@ -8,16 +8,16 @@ function TodoCounter() {
   if (totalTodos >= 1 && completedTodos < totalTodos) {
     return (
     <h1 className="TodoCounter">
-      Has completado
+      <p>Has completado
       <span> {completedTodos} </span>
       de
-      <span>{totalTodos}</span> ToDo's
+      <span> {totalTodos} </span>ToDo's</p>
     </h1>
     )
   } else if (totalTodos === 0) {
-    return <h1 className="TodoCounter">No tienes ningun ToDo ingresado</h1>
+    return <h1 className="TodoCounter"><span>No tienes ningun ToDo ingresado</span></h1>
   } else if (completedTodos === totalTodos) {
-    return <h1 className="TodoCounter">Has completado todos tus ToDo's 🥳</h1>
+    return <h1 className="TodoCounter"><span>Has completado todos tus ToDo's 🥳</span></h1>
   } 
 }
 

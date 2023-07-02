@@ -1,13 +1,11 @@
 body {
+  padding: 8px 8px;
   margin: 0;
-  padding: 0;
-  background: #F2F4F5;
-  color: #1E1E1F;
+  background-image: url(https://images.pexels.com/photos/2680270/pexels-photo-2680270.jpeg);
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 #root {
-  margin: 0 24px;
-  position: relative;
+  width: 100%;
   min-height: 100vh;
 }

@@ -1,8 +1,13 @@
 import React from 'react';
+import '../styles/InfoContainer.css';
 
 function Error(){
     return(
-        <p>Error al cargar la Informacion</p>
+        <div className='container'>
+      <div className="info">
+        <div className="info__title">Error al cargar la informacion, contacta al Administrador</div>
+      </div>
+    </div>
     )
 }
 

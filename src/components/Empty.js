@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Empty.css";
+import "../styles/InfoContainer.css";
 
 function Empty() {
   return (

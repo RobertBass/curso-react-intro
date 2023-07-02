@@ -11,6 +11,8 @@ import { Modal } from '../components/Modal';
 import { Form } from '../components/Form';
 import { Context } from "../components/Context";
 import { NoContent } from '../components/NoContent';
+import { Head } from '../components/Head';
+import { MainContent } from '../components/MainContent';
 
 
 function AppUI() {
@@ -27,30 +29,34 @@ function AppUI() {
 
   return (
     <>
-      <TodoCounter />
-      <TodoSearch />
-
-      <Context.Consumer>
-        {() => (
-          <TodoList>
-            {loading && <Loading />}
-            {error && <Error />}
-            {!loading && totalTodos === 0 && <Empty />}
-            {totalTodos >= 1 && filter.length === 0 && <NoContent />}
-            
-
-            {filter.map((todo) => (
-              <TodoItem
-                key={todo.text}
-                text={todo.text}
-                completed={todo.completed}
-                onComplete={() => completeTodo(todo.text)}
-                onDelete={() => deleteTodo(todo.text)}
-              />
-            ))}
-          </TodoList>
-        )}
-      </Context.Consumer>
+      <Head>
+        <TodoCounter />
+        <TodoSearch />
+      </Head>
+      
+      <MainContent>
+        <Context.Consumer>
+          {() => (
+            <TodoList>
+              {loading && <Loading />}
+              {error && <Error />}
+              {!loading && totalTodos === 0 && <Empty />}
+              {totalTodos >= 1 && filter.length === 0 && <NoContent />}
+              
+              {filter.map((todo) => (
+                <TodoItem
+                  key={todo.text}
+                  text={todo.text}
+                  completed={todo.completed}
+                  onComplete={() => completeTodo(todo.text)}
+                  onDelete={() => deleteTodo(todo.text)}
+                />
+              ))}
+            </TodoList>
+          )}
+        </Context.Consumer>
+      </MainContent>
+      
 
       <CreateTodoButton 
         setOpenModal={setOpenModal}

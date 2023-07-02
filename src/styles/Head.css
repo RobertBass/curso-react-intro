@@ -1,0 +1,24 @@
+.head-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 24px 0;
+    border: 2px gold;
+    border-style: inset;
+}
+
+
+@media (max-width: 640px){
+    .head-content {
+        padding: 8px 0;
+    }
+  }
+
+
+  @media (min-width: 641px) and (max-width: 1024px){
+    .head-content {
+        padding: 32px 0;
+    }
+
+  }

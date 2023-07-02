@@ -1,11 +1,41 @@
 .TodoCounter {
+    display: flex;
+    flex-direction: row;
     font-size: 24px;
-    text-align: center;
-    margin: 0;
-    padding: 48px;
+    padding: 8px 16px 8px 16px;
     font-weight: normal;
+    height: 16px;
+    align-items: center;
+  }
+
+  .TodoCounter p {
+    font-weight: bold;
+    color: gold;
+    align-content: center;
   }
   
+  .TodoCounter p span {
+    font-weight: bold;
+    color: gold;
+    align-content: center;
+  }
+
   .TodoCounter span {
     font-weight: bold;
+    color: gold;
+    align-content: center;
+  }
+
+  @media (max-width: 640px){
+    .TodoCounter{
+      font-size: 16px;
+    }
+  }
+
+
+  @media (min-width: 641px) and (max-width: 1024px){
+    .TodoCounter {
+      font-size: 40px;
+    }
+
   }

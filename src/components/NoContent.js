@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/NoContent.css";
+import "../styles/InfoContainer.css";
 
 function NoContent() {
   return (

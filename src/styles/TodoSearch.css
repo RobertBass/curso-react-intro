@@ -1,15 +1,15 @@
 .TodoSearch{
-    background:#f9fbfc;
-    border-radius:2px;
-    border:2px solid #202329;
-    margin:0 24px;
-    height:64px;
-    width:calc(100% - 62px);
+    background: black;
+    border-radius:8px;
+    border:2px solid gold;
+    margin: 8px 24px;
+    padding: 8px 128px 8px 128px;
+    height: 32px;
     font-size:24px;
     text-align:center;
     font-family:montserrat;
     font-weight:400;
-    color:#1e1e1f;
+    color:gold;
     box-shadow:0 5px 50px rgba(32,35,41,.25)
 }
 
@@ -20,5 +20,25 @@
 }
 
 .TodoSearch:focus{
-    outline-color:#61dafa
+    outline-color: gray;
 }
+
+@media (max-width: 640px) {
+    .TodoSearch{
+        padding: 8px 24px 8px;
+        font-size: 16px;
+        height: 16px;
+    }
+
+    .TodoSearch::placeholder{
+        font-weight: 200;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px){
+    .TodoSearch {
+        height: 64px;
+        font-size: 40px;
+    }
+
+  }
