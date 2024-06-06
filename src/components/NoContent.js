@@ -3,9 +3,11 @@ import "../styles/InfoContainer.css";
 
 function NoContent() {
   return (
-    <div className='container'>
+    <div className="container">
       <div className="info">
-        <div className="info__title">No existe ese ToDo en la base de datos</div>
+        <div className="info__title">
+          No existe ese ToDo en la base de datos
+        </div>
       </div>
     </div>
   );

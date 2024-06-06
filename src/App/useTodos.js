@@ -1,9 +1,7 @@
 import React from "react";
-import { useLocalStorage } from "../App/useLocalStorage";
+import { useLocalStorage } from "./useLocalStorage";
 
-const Context = React.createContext();
-
-function Provider({ children }) {
+function useTodos() {
   const {
     item: todos,
     saveItem: saveTodos,
@@ -15,9 +13,15 @@ function Provider({ children }) {
   const totalTodos = todos.length;
 
   const [searchValue, setSearchValue] = React.useState("");
-  const filter = todos.filter((todo) => {
-    return todo.text.toLowerCase().includes(searchValue.toLowerCase());
-  });
+  let filter = [];
+
+  if (searchValue === "") {
+    filter = todos;
+  } else {
+    filter = todos.filter((todo) => {
+      return todo.text.toLowerCase().includes(searchValue.toLowerCase());
+    });
+  }
 
   const [openModal, setOpenModal] = React.useState(false);
 
@@ -42,26 +46,20 @@ function Provider({ children }) {
     saveTodos(newTodos);
   };
 
-  return (
-    <Context.Provider
-      value={{
-        loading,
-        error,
-        completedTodos,
-        totalTodos,
-        searchValue,
-        setSearchValue,
-        filter,
-        addTodo,
-        completeTodo,
-        deleteTodo,
-        openModal,
-        setOpenModal
-      }}
-    >
-      {children}
-    </Context.Provider>
-  );
+  return {
+    loading,
+    error,
+    completedTodos,
+    totalTodos,
+    searchValue,
+    setSearchValue,
+    filter,
+    addTodo,
+    completeTodo,
+    deleteTodo,
+    openModal,
+    setOpenModal,
+  };
 }
 
-export { Context, Provider };
+export { useTodos };
